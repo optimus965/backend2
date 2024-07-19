@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-jbyq&ne@1geo!4f(7lp7z6wto^rrxk5!uw@uonw2u@&2sth%u_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -134,9 +134,20 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+    # # 'default':{
+    # #     dj_database_url.parse('postgresql://nagendra:JOwgLSPJZ0WStj7Dta2g5q0lYfIRei0P@dpg-cqd3fh6ehbks73bookng-a.oregon-postgres.render.com/proshop_9s7y')
+    # # }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'proshop_9s7y',
+        'USER': 'nagendra',
+        'PASSWORD': 'JOwgLSPJZ0WStj7Dta2g5q0lYfIRei0P',
+        'HOST': 'dpg-cqd3fh6ehbks73bookng-a.oregon-postgres.render.com',
+        'PORT': '5432',
     }
 }
 
